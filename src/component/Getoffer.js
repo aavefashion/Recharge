@@ -11,8 +11,10 @@ import Vi from "../assets/images/vi.jpg"
 
 const Getofffer = () => {
 const location = useLocation();
-const { number, np } = location.state || {};
-  
+const { number, np } = location.state || {
+    number: localStorage.getItem('mobileNumber'),
+    np: localStorage.getItem('networkProvider')
+  };  
   const [show, setShow] = useState(false)
   const [cancel, setCancel] = useState(false)
   const [price, setPrice] = useState(0)
